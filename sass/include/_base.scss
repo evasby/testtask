@@ -1,0 +1,48 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  color: #707275;
+
+}
+.inner{
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 10px;
+  background-color: #ececec;
+  height: 1000px;
+  min-width: 320px;
+}
+a{
+  //@include link(#373737, #373737);
+  &:focus{
+    outline: none;
+  }
+}
+::-webkit-input-placeholder{
+  color:#c7c7c7;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+::-moz-placeholder{
+  color:#c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1;
+}/* Firefox 19+ */
+:-moz-placeholder{
+  color:#c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1;
+}/* Firefox 18- */
+:-ms-input-placeholder{
+  color:#c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1;
+}
+input{
+  &:focus{
+    outline: none;
+  }
+}

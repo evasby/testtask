@@ -1,0 +1,32 @@
+@mixin old-ie {
+  @if $old-ie {
+    @content;
+  }
+}
+@mixin link($normal, $hover){
+  color:$normal;
+    &:visited{color:$normal;};
+    &:hover{color:$hover;};
+    &:active{color:$normal;}; 
+    &:focus{color:$normal;}; 
+}
+//*********************************************************************************/
+@mixin clearfix {
+  &:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
+  display: inline-block;
+  @include old-ie{
+    * html & {
+      height: 1%;
+    }
+    *zoom: 1;
+  }
+  display: block;
+}

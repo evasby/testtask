@@ -1,0 +1,168 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+html {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+table, tr, th, td, table, caption, tbody, tfoot, thead {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; }
+
+q, blockquote {
+  quotes: none; }
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+a img {
+  border: none; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/* font-family: "ArialNarrowBold"; */
+@font-face {
+  font-family: "ArialNarrowBold";
+  src: url("../fonts/ArialNarrowBold.eot");
+  src: url("../fonts/ArialNarrowBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArialNarrowBold.woff") format("woff"), url("../fonts/ArialNarrowBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #707275; }
+
+.inner {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 50px 10px;
+  background-color: #ececec;
+  height: 1000px;
+  min-width: 320px; }
+
+a:focus {
+  outline: none; }
+
+::-webkit-input-placeholder {
+  color: #c7c7c7;
+  font-size: 16px;
+  text-transform: uppercase; }
+
+::-moz-placeholder {
+  color: #c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1; }
+
+/* Firefox 19+ */
+:-moz-placeholder {
+  color: #c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1; }
+
+/* Firefox 18- */
+:-ms-input-placeholder {
+  color: #c7c7c7;
+  font-size: 18px;
+  text-transform: uppercase;
+  opacity: 1; }
+
+input:focus {
+  outline: none; }
+
+.search_form {
+  margin-bottom: 5px; }
+
+.search_field {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 38px;
+  padding: 8px 34px 8px 41px;
+  border: 1px solid #efefef;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background: url("../images/search.png") no-repeat #fbfbfb;
+  background-position: 13px 11px;
+  -webkit-box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.49), 0px 2px 1px -1px rgba(0, 0, 0, 0.11);
+  box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.49), 0px 2px 1px -1px rgba(0, 0, 0, 0.11);
+  color: #5c5e5f;
+  font-size: 16px; }
+  .search_field:focus {
+    background-color: #ffffff;
+    border-color: #f7f7f7;
+    color: #373f45; }
+    .search_field:focus + .search_clear {
+      display: inline-block; }
+
+.search_submit {
+  display: inline-block;
+  float: right;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  height: 38px;
+  margin-left: 6px;
+  padding: 0px 15px;
+  border: none;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  background-color: #e6e6e6;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(228, 228, 228, 0.25)), to(rgba(184, 188, 190, 0.25)));
+  background: -webkit-linear-gradient(top, rgba(228, 228, 228, 0.25) 0%, rgba(184, 188, 190, 0.25) 100%);
+  background: linear-gradient(to bottom, rgba(228, 228, 228, 0.25) 0%, rgba(184, 188, 190, 0.25) 100%);
+  -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+  font-family: ArialNarrowBold, Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #373f45;
+  font-size: 12px; }
+  .search_submit:hover {
+    background-color: #f7f7f7;
+    color: #000000;
+    cursor: pointer; }
+
+.search_clear {
+  display: none;
+  width: 18px;
+  height: 18px;
+  background: url("../images/clear.png") no-repeat;
+  margin-left: -27px;
+  position: relative;
+  top: 12px;
+  cursor: pointer; }
