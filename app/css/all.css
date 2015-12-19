@@ -173,7 +173,7 @@ a:focus, input:focus {
     position: relative;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    padding: 6px 0;
+    padding: 7px 0;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -258,6 +258,7 @@ a:focus, input:focus {
     margin-left: 26px;
     color: #707275;
     font-size: 14px;
+    line-height: 1;
     text-decoration: none; }
     .menu_link:visited {
       color: #707275; }
