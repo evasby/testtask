@@ -1,7 +1,7 @@
 .article{
-	/*h1{
-		column-span: all;
-	}*/
+	//h1{
+	//	column-span: all;
+	//}
 	p{
 	  margin-bottom: 20px;
 	  padding-right: 15px;
@@ -23,6 +23,9 @@
 	}
 	&_inner{
 		@media all and ( min-width: 801px ) {
+			/* 
+			 * Для экранов > 800px реализуем 2-х колоночную статью. Обрамляем в inner, чтобы без h1
+			 */
 			column-count: 2;
 			column-rule: 1px solid #9e9f9f;
 			column-gap: 50px;

@@ -11,8 +11,11 @@
 		top: 0px;
 		left: 0px;
 		border: 1px solid #ffffff;
-		outline: 1px solid #cecece;
+		outline: 1px solid #cecece;	
 		&:before{
+			/* 
+			 * Реализация иконки переключения меню
+			 */
 			content: '';
 			position: absolute;
 			top: 9px;
@@ -25,8 +28,11 @@
 			&:before{
 				background: none;
 			}
-		}
+		}	
 		@media all and ( min-width: 801px ) {
+			/* 
+			 * Меню для экранов > 800px
+			 */
 			background-image: none;
 			padding: 4px 0;
 			border: none;
@@ -39,16 +45,28 @@
 	&_item{
 		padding: 0px 10px 0px 0px;
 		list-style: none;
+		/* 
+		 * Прячем неактивные элемента списка
+		 */
 		display: none;
 		&__current{
-			display: block;
+			/* 
+			 * Показываем активный элемента списка
+			 */
+			display: block;			
 			.menu_list:hover &{
+				/* 
+				 * Показываем маркер активного элемента списка только при открытом меню
+				 */
 				background-image: url('../images/menu-arrow.png');
 				background-position: 7px 4px;
 				background-repeat: no-repeat;
 			}
 		}
 		.menu_list:hover &{
+			/* 
+			 * Показываем все элементы списка при активном меню
+			 */
 			display: block;
 			margin-bottom: 5px;
 			&:last-child{
@@ -56,6 +74,9 @@
 			}
 		}
 		@media all and ( min-width: 801px ) {
+			/* 
+			 * Реализация горизонтального меню для экранов > 800px
+			 */
 			display: inline-block;
 			border-radius: 5px;
 			margin-right: 3px;
@@ -78,24 +99,30 @@
 				}
 			}
 			@include old-ie{
+				/* 
+				 * Горизонтальное меню для IE7
+				 */
 				*float: left;
 			}
 		}
 	}
 	&_link{
 		display: block;
-		position: relative;
-		z-index: 1;
 		padding: 0px 0px 0px 0px;
 		margin-left: 26px;
-		text-align: left;
 		@include link(#707275, #2a2a2a);
 		font-size: 14px;
 		text-decoration: none;
 		.menu_list:hover .menu_item__current &{
+			/* 
+			 * Цвета ссылки активного пункта открытого меню
+			 */
 			@include link(#2a2a2a, #2a2a2a);
 		}
 		@media all and ( min-width: 801px ) {
+			/* 
+			 * Ссылки для горизонтального меню для экранов > 800px
+			 */
 			padding: 4px 8px;
 			margin-left: 0px;
 			@include link(#707275, #eff0f1);

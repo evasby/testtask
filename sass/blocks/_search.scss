@@ -4,6 +4,9 @@
 		margin-bottom: 5px;
 	}
 	&_field{
+		/* 
+		 * Поля формы
+		 */
 		float: left;
 		box-sizing: border-box;
 		width: 100%;
@@ -20,17 +23,29 @@
 			background-color: #ffffff;
 			border-color: #f7f7f7;
 			color: #373f45;
+			/* 
+			 * Показываем кнопку очистки поля
+			 */
 			& + .search_clear{
 				display: inline-block;
 			}
 		}
 		@include old-ie{
-			border: 1px solid #e6e6e6;
+			/* 
+			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 */
+			border: 1px solid #cccccc;
+			/* 
+			 * Graceful degradation
+			 */
 			*height: 21px;
 			*width: 90%;
 		}
 	}
 	&_submit{
+		/* 
+		 * Кнопки отправки формы
+		 */
 		display: inline-block;
 		float: right;
 		box-sizing: border-box;
@@ -52,11 +67,20 @@
 			cursor: pointer;
 		}
 		@include old-ie{
-			border: 1px solid #f8f8f8;
+			/* 
+			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 */
+			border: 1px solid #cccccc;
+			/* 
+			 * Graceful degradation
+			 */
 			*width: 10%;
 		}
 	}
 	&_clear{
+		/* 
+		 * Реализуем кнопку очистки поля
+		 */
 		display: none;
 		width: 18px;
 		height: 18px;

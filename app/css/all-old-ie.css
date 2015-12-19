@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -95,6 +96,9 @@ a:focus, input:focus {
   .search_form {
     margin-bottom: 5px; }
   .search_field {
+    /* 
+		 * Поля формы
+		 */
     float: left;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -110,16 +114,28 @@ a:focus, input:focus {
     box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.49), 0px 2px 1px -1px rgba(0, 0, 0, 0.11);
     color: #5c5e5f;
     font-size: 16px;
-    border: 1px solid #e6e6e6;
+    /* 
+			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 */
+    border: 1px solid #cccccc;
+    /* 
+			 * Graceful degradation
+			 */
     *height: 21px;
     *width: 90%; }
     .search_field:focus {
       background-color: #ffffff;
       border-color: #f7f7f7;
-      color: #373f45; }
+      color: #373f45;
+      /* 
+			 * Показываем кнопку очистки поля
+			 */ }
       .search_field:focus + .search_clear {
         display: inline-block; }
   .search_submit {
+    /* 
+		 * Кнопки отправки формы
+		 */
     display: inline-block;
     float: right;
     -webkit-box-sizing: border-box;
@@ -140,13 +156,22 @@ a:focus, input:focus {
     text-transform: uppercase;
     color: #373f45;
     font-size: 12px;
-    border: 1px solid #f8f8f8;
+    /* 
+			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 */
+    border: 1px solid #cccccc;
+    /* 
+			 * Graceful degradation
+			 */
     *width: 10%; }
     .search_submit:hover {
       background-color: #f7f7f7;
       color: #000000;
       cursor: pointer; }
   .search_clear {
+    /* 
+		 * Реализуем кнопку очистки поля
+		 */
     display: none;
     width: 18px;
     height: 18px;
@@ -172,6 +197,9 @@ a:focus, input:focus {
     border: 1px solid #ffffff;
     outline: 1px solid #cecece; }
     .menu_list:before {
+      /* 
+			 * Реализация иконки переключения меню
+			 */
       content: '';
       position: absolute;
       top: 9px;
@@ -183,6 +211,9 @@ a:focus, input:focus {
       background: none; }
     @media all and (min-width: 801px) {
       .menu_list {
+        /* 
+			 * Меню для экранов > 800px
+			 */
         background-image: none;
         padding: 4px 0;
         border: none;
@@ -192,25 +223,43 @@ a:focus, input:focus {
   .menu_item {
     padding: 0px 10px 0px 0px;
     list-style: none;
+    /* 
+		 * Прячем неактивные элемента списка
+		 */
     display: none; }
     .menu_item__current {
+      /* 
+			 * Показываем активный элемента списка
+			 */
       display: block; }
       .menu_list:hover .menu_item__current {
+        /* 
+				 * Показываем маркер активного элемента списка только при открытом меню
+				 */
         background-image: url("../images/menu-arrow.png");
         background-position: 7px 4px;
         background-repeat: no-repeat; }
     .menu_list:hover .menu_item {
+      /* 
+			 * Показываем все элементы списка при активном меню
+			 */
       display: block;
       margin-bottom: 5px; }
       .menu_list:hover .menu_item:last-child {
         margin-bottom: 3px; }
     @media all and (min-width: 801px) {
       .menu_item {
+        /* 
+			 * Реализация горизонтального меню для экранов > 800px
+			 */
         display: inline-block;
         -webkit-border-radius: 5px;
         border-radius: 5px;
         margin-right: 3px;
         padding: 0px;
+        /* 
+				 * Горизонтальное меню для IE7
+				 */
         *float: left; }
         .menu_item:hover {
           background-color: #707275; }
@@ -226,11 +275,8 @@ a:focus, input:focus {
             margin-bottom: 0px; } }
   .menu_link {
     display: block;
-    position: relative;
-    z-index: 1;
     padding: 0px 0px 0px 0px;
     margin-left: 26px;
-    text-align: left;
     color: #707275;
     font-size: 14px;
     text-decoration: none; }
@@ -243,6 +289,9 @@ a:focus, input:focus {
     .menu_link:focus {
       color: #707275; }
     .menu_list:hover .menu_item__current .menu_link {
+      /* 
+			 * Цвета ссылки активного пункта открытого меню
+			 */
       color: #2a2a2a; }
       .menu_list:hover .menu_item__current .menu_link:visited {
         color: #2a2a2a; }
@@ -254,6 +303,9 @@ a:focus, input:focus {
         color: #2a2a2a; }
     @media all and (min-width: 801px) {
       .menu_link {
+        /* 
+			 * Ссылки для горизонтального меню для экранов > 800px
+			 */
         padding: 4px 8px;
         margin-left: 0px;
         color: #707275; }
@@ -276,32 +328,36 @@ a:focus, input:focus {
           .menu_item__current .menu_link:focus, .menu_list:hover .menu_item__current .menu_link:focus {
             color: #eff0f1; } }
 
-.article {
-  /*h1{
-		column-span: all;
-	}*/ }
-  .article p {
-    margin-bottom: 20px;
-    padding-right: 15px;
-    text-indent: 15px; }
-  .article dd {
-    padding-left: 15px; }
-  .article dl {
-    margin-bottom: 20px; }
-  .article dt {
-    margin-top: 5px;
-    color: #4d4e53; }
-  .article ol li {
-    margin-bottom: 5px;
-    color: #4d4e53; }
-  @media all and (min-width: 801px) {
-    .article_inner {
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-      -webkit-column-rule: 1px solid #9e9f9f;
-      -moz-column-rule: 1px solid #9e9f9f;
-      column-rule: 1px solid #9e9f9f;
-      -webkit-column-gap: 50px;
-      -moz-column-gap: 50px;
-      column-gap: 50px; } }
+.article p {
+  margin-bottom: 20px;
+  padding-right: 15px;
+  text-indent: 15px; }
+
+.article dd {
+  padding-left: 15px; }
+
+.article dl {
+  margin-bottom: 20px; }
+
+.article dt {
+  margin-top: 5px;
+  color: #4d4e53; }
+
+.article ol li {
+  margin-bottom: 5px;
+  color: #4d4e53; }
+
+@media all and (min-width: 801px) {
+  .article_inner {
+    /* 
+			 * Для экранов > 800px реализуем 2-х колоночную статью. Обрамляем в inner, чтобы без h1
+			 */
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-rule: 1px solid #9e9f9f;
+    -moz-column-rule: 1px solid #9e9f9f;
+    column-rule: 1px solid #9e9f9f;
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px; } }
