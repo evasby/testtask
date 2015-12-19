@@ -1,0 +1,31 @@
+.article{
+	/*h1{
+		column-span: all;
+	}*/
+	p{
+	  margin-bottom: 20px;
+	  padding-right: 15px;
+	  text-indent: 15px;
+	}
+	dd{
+	  padding-left: 15px;
+	}
+	dl{
+	  margin-bottom: 20px;
+	}
+	dt{
+	  margin-top: 5px;
+	  color: #4d4e53;
+	}
+	ol li{
+	  margin-bottom: 5px;
+	  color: #4d4e53;
+	}
+	&_inner{
+		@media all and ( min-width: 801px ) {
+			column-count: 2;
+			column-rule: 1px solid #9e9f9f;
+			column-gap: 50px;
+		}
+	}
+}

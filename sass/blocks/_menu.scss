@@ -1,0 +1,107 @@
+.menu{
+	position: relative;
+	height: 32px;
+	margin-bottom: 50px;
+	background:  url('../images/menu-bac.jpg') repeat #ebebea;
+	&_list{
+		position: relative;
+		box-sizing: border-box;
+		padding: 6px 0;
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		border: 1px solid #ffffff;
+		outline: 1px solid #cecece;
+		&:before{
+			content: '';
+			position: absolute;
+			top: 9px;
+			left: 7px;
+			width: 12px;
+			height: 10px;
+			background: url('../images/menu-collapse.png') no-repeat 0px 0px;
+		}
+		&:hover{
+			&:before{
+				background: none;
+			}
+		}
+		@media all and ( min-width: 801px ) {
+			background-image: none;
+			padding: 4px 0;
+			border: none;
+			outline: none;
+			&:before{
+				background: none;
+			}
+		}
+	}
+	&_item{
+		padding: 0px 10px 0px 0px;
+		list-style: none;
+		display: none;
+		&__current{
+			display: block;
+			.menu_list:hover &{
+				background-image: url('../images/menu-arrow.png');
+				background-position: 7px 4px;
+				background-repeat: no-repeat;
+			}
+		}
+		.menu_list:hover &{
+			display: block;
+			margin-bottom: 5px;
+			&:last-child{
+				margin-bottom: 3px;
+			}
+		}
+		@media all and ( min-width: 801px ) {
+			display: inline-block;
+			border-radius: 5px;
+			margin-right: 3px;
+			padding: 0px;
+			&:hover{
+				background-color: #707275;
+			}
+			&__current{
+				display: inline-block;
+				background-color: #707275;
+				.menu_list:hover &{
+					background-image: none;
+				}
+			}
+			.menu_list:hover &{
+				display: inline-block;
+				margin-bottom: 0;
+				&:last-child{
+					margin-bottom: 0px;
+				}
+			}
+			@include old-ie{
+				*float: left;
+			}
+		}
+	}
+	&_link{
+		display: block;
+		position: relative;
+		z-index: 1;
+		padding: 0px 0px 0px 0px;
+		margin-left: 26px;
+		text-align: left;
+		@include link(#707275, #2a2a2a);
+		font-size: 14px;
+		text-decoration: none;
+		.menu_list:hover .menu_item__current &{
+			@include link(#2a2a2a, #2a2a2a);
+		}
+		@media all and ( min-width: 801px ) {
+			padding: 4px 8px;
+			margin-left: 0px;
+			@include link(#707275, #eff0f1);
+			.menu_item__current &, .menu_list:hover .menu_item__current &{
+				@include link(#eff0f1, #eff0f1);
+			}
+		}
+	}
+}
