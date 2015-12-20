@@ -8,6 +8,7 @@
 		 * Поля формы
 		 */
 		float: left;
+		overflow: hidden;
 		box-sizing: border-box;
 		width: 100%;
 		height: 39px;
@@ -32,14 +33,10 @@
 		}
 		@include old-ie{
 			/* 
-			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 * Темнее бордер для old-IE из-за отсутствия box-shadow
 			 */
 			border: 1px solid #cccccc;
-			/* 
-			 * Graceful degradation
-			 */
 			*height: 21px;
-			*width: 90%;
 		}
 	}
 	&_submit{
@@ -71,10 +68,7 @@
 			 * Темнее бордер для IE8 из-за отсутствия box-shadow
 			 */
 			border: 1px solid #cccccc;
-			/* 
-			 * Graceful degradation
-			 */
-			*width: 10%;
+			*padding: 0px 8px;
 		}
 	}
 	&_clear{
@@ -89,5 +83,13 @@
     position: relative;
     top: 12px;
     cursor: pointer;
+	}
+	@include old-ie{
+		/* 
+		 * Ширина поля для IE7
+		 */
+		fieldset{
+			*overflow: hidden;
+		}
 	}
 }

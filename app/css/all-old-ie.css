@@ -80,7 +80,6 @@ a:focus, input:focus {
   box-sizing: border-box;
   min-width: 320px;
   max-width: 968px;
-  width: 100%;
   margin: 0 auto;
   padding: 20px 15px;
   background-color: #ececec; }
@@ -89,7 +88,10 @@ a:focus, input:focus {
       padding: 20px 93px; } }
 
 .search {
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  /* 
+		 * Ширина поля для IE7
+		 */ }
   .search_form {
     margin-bottom: 5px; }
   .search_field {
@@ -97,6 +99,7 @@ a:focus, input:focus {
 		 * Поля формы
 		 */
     float: left;
+    overflow: hidden;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     width: 100%;
@@ -112,14 +115,10 @@ a:focus, input:focus {
     color: #5c5e5f;
     font-size: 16px;
     /* 
-			 * Темнее бордер для IE8 из-за отсутствия box-shadow
+			 * Темнее бордер для old-IE из-за отсутствия box-shadow
 			 */
     border: 1px solid #cccccc;
-    /* 
-			 * Graceful degradation
-			 */
-    *height: 21px;
-    *width: 90%; }
+    *height: 21px; }
     .search_field:focus {
       background-color: #ffffff;
       border-color: #f7f7f7;
@@ -157,10 +156,7 @@ a:focus, input:focus {
 			 * Темнее бордер для IE8 из-за отсутствия box-shadow
 			 */
     border: 1px solid #cccccc;
-    /* 
-			 * Graceful degradation
-			 */
-    *width: 10%; }
+    *padding: 0px 8px; }
     .search_submit:hover {
       background-color: #f7f7f7;
       color: #000000;
@@ -177,6 +173,8 @@ a:focus, input:focus {
     position: relative;
     top: 12px;
     cursor: pointer; }
+  .search fieldset {
+    *overflow: hidden; }
 
 .menu {
   position: relative;
@@ -192,7 +190,12 @@ a:focus, input:focus {
     top: 0px;
     left: 0px;
     border: 1px solid #ffffff;
-    outline: 1px solid #cecece; }
+    outline: 1px solid #cecece;
+    /* 
+			 * Темнее бордер для IE7, иконка переключения меню для IE7
+			 */
+    *border: 1px solid #cecece;
+    *zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("small") ).className="before" ); }
     .menu_list:before {
       /* 
 			 * Реализация иконки переключения меню
@@ -204,8 +207,17 @@ a:focus, input:focus {
       width: 12px;
       height: 10px;
       background: url("../images/menu-collapse.png") no-repeat 0px 0px; }
+    .menu_list .before {
+      position: absolute;
+      top: 11px;
+      left: 7px;
+      width: 12px;
+      height: 10px;
+      background: url("../images/menu-collapse.png") no-repeat 0px 0px; }
     .menu_list:hover:before {
       background: none; }
+    .menu_list:hover .before {
+      display: none; }
     @media all and (min-width: 801px) {
       .menu_list {
         /* 
@@ -216,7 +228,9 @@ a:focus, input:focus {
         border: none;
         outline: none; }
         .menu_list:before {
-          background: none; } }
+          background: none; }
+        .menu_list .before {
+          display: none; } }
   .menu_item {
     padding: 0px 10px 0px 0px;
     list-style: none;
