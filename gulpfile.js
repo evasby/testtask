@@ -83,7 +83,7 @@ gulp.task('build', ['clean', 'imageMin', 'fonts'], function () {
     return gulp.src('app/*.html')
       .pipe(assets)
       .pipe(gulpif('*.js', uglify()))
-      .pipe(gulpif('*.css', minifyCss()))
+      .pipe(gulpif('*.css', minifyCss({compatibility: 'ie7'})))
       .pipe(assets.restore())
       .pipe(useref())
       .pipe(gulp.dest('dist'));
