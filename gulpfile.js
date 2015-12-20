@@ -63,20 +63,17 @@ gulp.task('clean', function () {
 
 // imageMin
 gulp.task('imageMin', function () {
-    return gulp.src('app/images/**/*.*')
+    return gulp.src('./app/images/**/*.*')
       .pipe(imagemin())
+      .pipe(wait(500))
       .pipe(gulp.dest('dist/images'));
 });
 
-/*gulp.task('fonts', function() {
-    return gulp.src([
-                    'app/bower_components/font-awesome/fonts/fontawesome-webfont.*'])
-            .pipe(gulp.dest('dist/fonts/'));
-});*/
 // Fonts
 gulp.task('fonts', function() {
-    return gulp.src(['app/fonts/**/*.*'])
-      .pipe(gulp.dest('dist/fonts'));
+    return gulp.src('./app/fonts/**/*.*')
+    	.pipe(wait(500))
+      .pipe(gulp.dest('dist/fonts/'));
 });
 
 // Build

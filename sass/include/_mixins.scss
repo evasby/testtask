@@ -5,10 +5,11 @@
 }
 @mixin link($normal, $hover){
   color:$normal;
+    &:link{color:$normal;};
     &:visited{color:$normal;};
+    &:focus{color:$normal;};
+    &:active{color:$normal;};
     &:hover{color:$hover;};
-    &:active{color:$normal;}; 
-    &:focus{color:$normal;}; 
 }
 //*********************************************************************************/
 @mixin clearfix {

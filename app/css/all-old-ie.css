@@ -72,9 +72,6 @@ h1 {
   line-height: 1;
   margin-bottom: 20px; }
 
-p {
-  font-size: 14px; }
-
 a:focus, input:focus {
   outline: none; }
 
@@ -150,8 +147,8 @@ a:focus, input:focus {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(228, 228, 228, 0.25)), to(rgba(184, 188, 190, 0.25)));
     background: -webkit-linear-gradient(top, rgba(228, 228, 228, 0.25) 0%, rgba(184, 188, 190, 0.25) 100%);
     background: linear-gradient(to bottom, rgba(228, 228, 228, 0.25) 0%, rgba(184, 188, 190, 0.25) 100%);
-    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4), 0px 0px 7px 2px rgba(0, 0, 0, 0.07);
+    box-shadow: inset 0px 0px 0px 1px rgba(255, 255, 255, 0.5), 0px 1px 2px 0px rgba(0, 0, 0, 0.4), 0px 0px 7px 2px rgba(0, 0, 0, 0.07);
     font-family: ArialNarrowBold, Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     color: #373f45;
@@ -281,26 +278,30 @@ a:focus, input:focus {
     font-size: 14px;
     line-height: 1;
     text-decoration: none; }
-    .menu_link:visited {
+    .menu_link:link {
       color: #707275; }
-    .menu_link:hover {
-      color: #2a2a2a; }
-    .menu_link:active {
+    .menu_link:visited {
       color: #707275; }
     .menu_link:focus {
       color: #707275; }
+    .menu_link:active {
+      color: #707275; }
+    .menu_link:hover {
+      color: #2a2a2a; }
     .menu_list:hover .menu_item__current .menu_link {
       /* 
 			 * Цвета ссылки активного пункта открытого меню
 			 */
       color: #2a2a2a; }
+      .menu_list:hover .menu_item__current .menu_link:link {
+        color: #2a2a2a; }
       .menu_list:hover .menu_item__current .menu_link:visited {
         color: #2a2a2a; }
-      .menu_list:hover .menu_item__current .menu_link:hover {
+      .menu_list:hover .menu_item__current .menu_link:focus {
         color: #2a2a2a; }
       .menu_list:hover .menu_item__current .menu_link:active {
         color: #2a2a2a; }
-      .menu_list:hover .menu_item__current .menu_link:focus {
+      .menu_list:hover .menu_item__current .menu_link:hover {
         color: #2a2a2a; }
     @media all and (min-width: 801px) {
       .menu_link {
@@ -310,32 +311,33 @@ a:focus, input:focus {
         padding: 4px 8px;
         margin-left: 0px;
         color: #707275; }
-        .menu_link:visited {
+        .menu_link:link {
           color: #707275; }
-        .menu_link:hover {
-          color: #eff0f1; }
-        .menu_link:active {
+        .menu_link:visited {
           color: #707275; }
         .menu_link:focus {
           color: #707275; }
+        .menu_link:active {
+          color: #707275; }
+        .menu_link:hover {
+          color: #eff0f1; }
         .menu_item__current .menu_link, .menu_list:hover .menu_item__current .menu_link {
           color: #eff0f1; }
+          .menu_item__current .menu_link:link, .menu_list:hover .menu_item__current .menu_link:link {
+            color: #eff0f1; }
           .menu_item__current .menu_link:visited, .menu_list:hover .menu_item__current .menu_link:visited {
             color: #eff0f1; }
-          .menu_item__current .menu_link:hover, .menu_list:hover .menu_item__current .menu_link:hover {
+          .menu_item__current .menu_link:focus, .menu_list:hover .menu_item__current .menu_link:focus {
             color: #eff0f1; }
           .menu_item__current .menu_link:active, .menu_list:hover .menu_item__current .menu_link:active {
             color: #eff0f1; }
-          .menu_item__current .menu_link:focus, .menu_list:hover .menu_item__current .menu_link:focus {
+          .menu_item__current .menu_link:hover, .menu_list:hover .menu_item__current .menu_link:hover {
             color: #eff0f1; } }
 
 .article p {
   margin-bottom: 20px;
   padding-right: 15px;
   text-indent: 15px; }
-
-.article dd {
-  padding-left: 15px; }
 
 .article dl {
   margin-bottom: 20px; }
@@ -344,14 +346,17 @@ a:focus, input:focus {
   margin-top: 5px;
   color: #4d4e53; }
 
-.article ol li {
+.article dd {
+  padding-left: 15px; }
+
+.article_inner > ul li {
   margin-bottom: 5px;
   color: #4d4e53; }
 
 @media all and (min-width: 801px) {
   .article_inner {
     /* 
-			 * Для экранов > 800px реализуем 2-х колоночную статью. Обрамляем в inner, чтобы без h1
+			 * Для экранов > 800px реализуем 2-х колоночную статью. Обрамляем в inner, чтобы не включать заголовок
 			 */
     -webkit-column-count: 2;
     -moz-column-count: 2;
